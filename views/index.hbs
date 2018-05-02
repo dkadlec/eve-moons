@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+{{#if table}}
+yes
+<table>
+  {{#each table as |value key|}}
+  <tr><th colspan="2">{{key}}</th></tr>
+  {{#each value as |obj|}}
+  <tr>
+    <td><img src="https://image.eveonline.com/Type/{{obj.oreId}}_32.png" alt=""></td>
+    <td>
+      {{obj.product}}
+    </td>
+    <td>{{obj.quantity}}</td>
+  </tr>
+  {{/each}}
+
+  {{/each}}
+</table>
+{{/if}}
+
+<form action="add" method="post">
+  <textarea name="moondata" id="moondata" cols="30" rows="10"></textarea>
+  <button type="submit">Submit</button>
+</form>
+<script>window.data={{{script}}}</script>
