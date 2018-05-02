@@ -1,8 +1,142 @@
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+html {
+  overflow-y: scroll;
+  font-size: 10px;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 1.4rem/2rem Arial, sans-serif;
+  background: #222;
+  color: #fff;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 0 0 6rem;
+  line-height: 1.2;
+}
+
+.mother {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.footer {
+  padding: 2rem 3rem;
+  text-align: right;
+  flex: 0 0 auto;
+  color: #888;
 }
 
 a {
-  color: #00B7FF;
+  color: #4286f4;
+  transition: color .15s ease-out;
+}
+a:hover {
+  color: #3071db;
+}
+
+table {
+  border: 1px solid #444;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  border: 1px solid #444;
+  text-align: left;
+  padding: .8rem 1.2rem;
+  vertical-align: middle;
+  background: #181818;
+}
+td {
+  border: 1px solid #444;
+  padding: .4rem 1.2rem;
+  vertical-align: middle;
+}
+img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+form {
+  margin: 0;
+}
+
+.table__image {
+  width: 32px;
+  background: #eee;
+  padding: 0 1.2rem;
+}
+
+.table__quantity {
+  text-align: right;
+  width: 50px;
+}
+.table__highlight td {
+  background: rgba(109, 173, 136, .5);
+  border-right: 0;
+  border-left: 0;
+}
+
+.error {
+  margin: 2rem 0;
+  color: #bbb;
+  text-align: center;
+}
+
+textarea {
+  border: 1px solid #444;
+  background: #181818;
+  color: #eee;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: vertical;
+  padding: .8rem 1.2rem;
+}
+
+button {
+  margin-top: 1.2rem;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  background: #4286f4;
+  text-align: center;
+  padding: 1.8rem 1rem;
+  font-weight: bold;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  transition: background .15s ease-out;
+}
+button:hover {
+  background: #3071db;
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 8px;
+  }
 }

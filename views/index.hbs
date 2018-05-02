@@ -1,27 +1,30 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-
+<h1>Eve Moon Probe Parser</h1>
 {{#if table}}
-yes
 <table>
   {{#each table as |value key|}}
-  <tr><th colspan="2">{{key}}</th></tr>
-  {{#each value as |obj|}}
-  <tr>
-    <td><img src="https://image.eveonline.com/Type/{{obj.oreId}}_32.png" alt=""></td>
-    <td>
-      {{obj.product}}
-    </td>
-    <td>{{obj.quantity}}</td>
-  </tr>
-  {{/each}}
-
+    <tr>
+      <th colspan="3">{{key}}</th>
+    </tr>
+    {{#each value as |obj|}}
+      <tr class="{{#if obj.isGood}}table__highlight{{/if}}">
+        <td class="table__image">
+          <img src="https://image.eveonline.com/Type/{{obj.oreId}}_32.png" alt="{{obj.oreName}}" class="table__thumb">
+        </td>
+        <td class="table__name">
+          {{obj.oreName}}
+        </td>
+        <td class="table__quantity">
+          {{obj.quantity}}
+        </td>
+      </tr>
+    {{/each}}
   {{/each}}
 </table>
+<p class="error">Doesn't look like expected? Paste exactly the output from Eve.</p>
 {{/if}}
 
+
 <form action="add" method="post">
-  <textarea name="moondata" id="moondata" cols="30" rows="10"></textarea>
+  <textarea name="moondata" id="moondata" cols="30" rows="10" placeholder="paste your moon probe data"></textarea>
   <button type="submit">Submit</button>
 </form>
-<script>window.data={{{script}}}</script>
